@@ -1,0 +1,73 @@
+header{
+      
+    overflow: hidden;
+    background-color: rgb(177, 225, 236);
+    position:relative;
+
+}
+header ul li  {
+    float: left;
+    display: block;
+   color: rgb(48, 2, 250);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;    
+  }
+
+  #res{
+    align-items: center;
+    font-size:100px;
+    font-weight:bolder;
+    font-display:inherit;
+    font-stretch: extra-expanded;
+    font-family: cursive;
+
+  }
+  #sales{
+      position:relative;
+      float: right;
+      font-size: 30px;
+  }
+  
+  #Slogan{
+      padding-left: 150px;
+      font-family: cursive;
+      font-style: oblique;
+      font-stretch: wider;
+  }
+
+  #perface {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #perface td, #perface th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #perface tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #perface tr:hover {background-color: #ddd;}
+  
+  #perface th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5592d8;
+    color: white;
+  }
+  .gallery {
+    display: inline;
+    border: 1px solid #ccc;
+  }
+  .gallery:hover {
+    border: 1px solid #777;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
