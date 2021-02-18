@@ -18,7 +18,7 @@ function Location(locationName, minCust, maxCust, AvgCookies) {
     //this.salesPerday = 0;
     this.arrCustperhour = [];
     this.arrcookiesPerHour = [];
-    // arr.push(this)
+    arr.push(this)
 }
 
 Location.prototype.generateCustomer = function () {
@@ -86,14 +86,14 @@ let tokyo = new Location('Tokyo', 3, 24, 1.2);
 let dubai = new Location('Dubai', 11, 38, 3.7);
 let paris = new Location('Paris', 20, 38, 2.3);
 let lima = new Location('Lima', 2, 16, 4.6);
-let arrOfObjects = [seattle, tokyo, dubai, paris, lima];
+
 
 headerRow();
-seattle.Render();
-tokyo.Render();
-dubai.Render();
-paris.Render();
-lima.Render();
+//seattle.Render();
+//tokyo.Render();
+//dubai.Render();
+//paris.Render();
+//lima.Render();
 
 function footerRow() {
     let tr = document.createElement('tr');
@@ -113,9 +113,9 @@ function footerRow() {
     for (let i = 0; i < hourWork.length; i++) {
         sum = 0;
 
-        for (let j = 0; j < arrOfObjects.length; j++) {
+        for (let j = 0; j < arr.length; j++) {
 
-            sum = sum + arrOfObjects[j].arrcookiesPerHour[i];
+            sum = sum + arr[j].arrcookiesPerHour[i];
 
         }
 
@@ -132,7 +132,7 @@ function footerRow() {
 }
 
 
-footerRow();
+
 
 
 let form = document.getElementById("cookiesForm")
@@ -151,7 +151,7 @@ function cookiesNew(event) {
     maximum = parseInt(maximum)
     let AvgCookie = event.target.avgcookies.value;
     AvgCookie = parseFloat(AvgCookie)
-
+     
     let newlocation = new Location(location, minimum, maximum, AvgCookie)
     console.log(newlocation)
     table.deleteRow(countRow)
@@ -160,13 +160,13 @@ function cookiesNew(event) {
 
 
 }
-
+//footerRow();
 for(let i= 0 ; i< arr.length; i++){
 
 arr[i].Render();
 
 }
-
+footerRow();
 
 
 /*
