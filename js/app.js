@@ -81,6 +81,19 @@ function headerRow() {
 
 
 }
+let seattle = new Location('Seattle', 23, 65, 6.3);
+let tokyo = new Location('Tokyo', 3, 24, 1.2);
+let dubai = new Location('Dubai', 11, 38, 3.7);
+let paris = new Location('Paris', 20, 38, 2.3);
+let lima = new Location('Lima', 2, 16, 4.6);
+let arrOfObjects = [seattle, tokyo, dubai, paris, lima];
+
+headerRow();
+seattle.Render();
+tokyo.Render();
+dubai.Render();
+paris.Render();
+lima.Render();
 
 function footerRow() {
     let tr = document.createElement('tr');
@@ -117,19 +130,7 @@ function footerRow() {
 
 
 }
-let seattle = new Location('Seattle', 23, 65, 6.3);
-let tokyo = new Location('Tokyo', 3, 24, 1.2);
-let dubai = new Location('Dubai', 11, 38, 3.7);
-let paris = new Location('Paris', 20, 38, 2.3);
-let lima = new Location('Lima', 2, 16, 4.6);
-let arrOfObjects = [seattle, tokyo, dubai, paris, lima];
 
-headerRow();
-seattle.Render();
-tokyo.Render();
-dubai.Render();
-paris.Render();
-lima.Render();
 
 footerRow();
 
@@ -138,6 +139,7 @@ let form = document.getElementById("cookiesForm")
 form.addEventListener('submit', cookiesNew)
 
 function cookiesNew(event) {
+    let countRow = table.rows.length-1;
     event.preventDefault();
     console.log(event);
 
@@ -152,8 +154,9 @@ function cookiesNew(event) {
 
     let newlocation = new Location(location, minimum, maximum, AvgCookie)
     console.log(newlocation)
-    
+    table.deleteRow(countRow)
     newlocation.Render();
+    footerRow();
 
 
 }
