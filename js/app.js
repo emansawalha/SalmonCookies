@@ -8,29 +8,30 @@ function getRandom(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
+let arr = [];
 
 function Location(locationName, minCust, maxCust, AvgCookies) {
-    this.locationName= locationName;
+    this.locationName = locationName;
     this.minCust = minCust;
     this.maxCust = maxCust;
     this.AvgCookies = AvgCookies;
     //this.salesPerday = 0;
     this.arrCustperhour = [];
     this.arrcookiesPerHour = [];
+    // arr.push(this)
 }
 
 Location.prototype.generateCustomer = function () {
     for (let i = 0; i < hourWork.length; i++) {
         this.arrCustperhour.push(Math.floor(getRandom(this.maxCust, this.minCust)));
     }
-},
-    Location.prototype.generateCookies = function () {
-        for (let i = 0; i < hourWork.length; i++) {
-            this.arrcookiesPerHour.push(Math.floor(this.arrCustperhour[i] * this.AvgCookies));
-            //this.salesPerday= this.salesPerday +  this.arrcookiesPerHour[i];
-        }
+}
+Location.prototype.generateCookies = function () {
+    for (let i = 0; i < hourWork.length; i++) {
+        this.arrcookiesPerHour.push(Math.floor(this.arrCustperhour[i] * this.AvgCookies));
+        //this.salesPerday= this.salesPerday +  this.arrcookiesPerHour[i];
     }
+}
 
 
 function headerRow() {
@@ -93,18 +94,18 @@ function footerRow() {
          tr.appendChild(thTotal)
          thTotal.textContent='Totals';
         */
-       console.log('hi')
+
     let sum;
     let megaTotal = 0;
     for (let i = 0; i < hourWork.length; i++) {
         sum = 0;
-        
+
         for (let j = 0; j < arrOfObjects.length; j++) {
-              console.log(arrOfObjects[j])
+
             sum = sum + arrOfObjects[j].arrcookiesPerHour[i];
-             
+
         }
-        console.log(sum)
+
         megaTotal = megaTotal + sum;
         th = document.createElement('th');
         tr.appendChild(th);
@@ -129,10 +130,39 @@ tokyo.Render();
 dubai.Render();
 paris.Render();
 lima.Render();
+
 footerRow();
 
 
+let form = document.getElementById("cookiesForm")
+form.addEventListener('submit', cookiesNew)
 
+function cookiesNew(event) {
+    event.preventDefault();
+    console.log(event);
+
+    let location = event.target.location.value;
+    let minimum = event.target.mincust.value;
+    minimum = parseInt(minimum)
+    console.log(minimum)
+    let maximum = event.target.maxcust.value;
+    maximum = parseInt(maximum)
+    let AvgCookie = event.target.avgcookies.value;
+    AvgCookie = parseFloat(AvgCookie)
+
+    let newlocation = new Location(location, minimum, maximum, AvgCookie)
+    console.log(newlocation)
+    
+    newlocation.Render();
+
+
+}
+
+for(let i= 0 ; i< arr.length; i++){
+
+arr[i].Render();
+
+}
 
 
 
