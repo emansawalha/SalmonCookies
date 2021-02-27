@@ -13,7 +13,15 @@ header ul li  {
     padding: 14px 16px;
     text-decoration: none;
     font-weight: 100;
-    font-family: Georgia, 'Times New Roman', Times, serif;    
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+      
+  }
+
+  header ul li img{
+    border-radius: 50%;
+  }
+  header ul li a{
+    text-decoration: none;
   }
 
   #res{
@@ -30,6 +38,53 @@ header ul li  {
       float: right;
       font-size: 30px;
   }
+  .gallary{
+    
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-seafood-gourmet-cartoon-hand-drawn-banner-image_162562.jpg);
+    background-size:100% 100% , auto , cover;
+    padding: 6em 0 12em 0;
+    background-repeat: no-repeat;
+    height:200px;
+    position:relative;
+    bottom:48px;
+  }
+  .gallary h1:hover{
+    color: rgb(252, 5, 157);
+  }
+  .gallary h1,p {
+    font-family: 'Merienda', cursive;
+    font-weight: bolder;
+    line-height:60px;
+    text-align: center;
+  }
+  .gallary h1{
+    font-size: 50px;
+   color:rgb(8, 65, 253) ;
+  }
+  
+  .gallary p{
+    font-size: large;
+    color: rgb(81, 8, 250);
+  }
+
+
+.section{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+.section img{
+  flex-basis: 40%
+
+}
+section p{
+  font-size: 40px;
+  padding-left: 20px;
+  color: cornflowerblue;
+}
+
   
   #Slogan{
       padding-left: 150px;
@@ -60,14 +115,13 @@ header ul li  {
     background-color: #5592d8;
     color: white;
   }
-  .gallery {
-    display: inline;
-    border: 1px solid #ccc;
-  }
-  .gallery:hover {
-    border: 1px solid #777;
-  }
-  .gallery img {
-    width: 100%;
-    height: auto;
-  }
+  .gallary{ 
+
+
+ }
+  
+footer div table{
+  width: 200px;
+  height: 200px;
+
+}
